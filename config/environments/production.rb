@@ -3,13 +3,14 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  config.hosts << 'lead-generator-production.up.railway.app'
+
   config.cache_classes = true
   config.eager_load = true
   config.consider_all_requests_local = false
 
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.active_storage.service = :local
   config.assets.compile = false
   config.log_level = :info
   config.log_tags = %i[request_id]

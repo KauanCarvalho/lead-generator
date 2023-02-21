@@ -6,7 +6,7 @@ module Lead
       class TwitterWorker
         include Sidekiq::Worker
 
-        def perform(_args)
+        def perform(*_args)
           Lead::Generator::Twitter.new.perform
         end
       end

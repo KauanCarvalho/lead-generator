@@ -61,8 +61,8 @@ module Twitter
 
       def client
         @client ||= ::Twitter::REST::Client.new do |config|
-          config.consumer_key    = 'ubQXVUjlWlMefczhN5UuGXa46'
-          config.consumer_secret = 'CD9t7juKd47S07HsbPktTnHMK3NXC8Dp8J4eyzrHP3on2De2uX'
+          config.consumer_key    = ENV.fetch('TWITTER_CONSUMER_KEY', nil)
+          config.consumer_secret = ENV.fetch('TWITTER_CONSUMER_SECRET', nil)
         end
       end
     end

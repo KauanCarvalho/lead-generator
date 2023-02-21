@@ -1,0 +1,38 @@
+<%= form_with(model: custom_lead) do |form| %>
+  <% if custom_lead.errors.any? %>
+    <div id="error_explanation">
+      <% plural = custom_lead.errors.count > 1 %>
+
+      <h2><%= "#{custom_lead.errors.count} #{plural ? 'Erros' : 'Erro'} não #{plural ? 'permitiram' : 'permitiu'}" %> o lead de ser salvo </h2>
+
+      <ol>
+        <% custom_lead.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

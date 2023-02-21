@@ -1,0 +1,23 @@
+pt-BR:
+  mongoid:
+    errors:
+      models:
+        custom_lead:
+          attributes:
+            first_name:
+              blank: não pode ficar em branco
+            last_name:
+              blank: não pode ficar em branco
+            email:
+              blank: não pode ficar em branco
+              invalid: com formato inválido
+              taken: já em uso
+    models:
+      custom_lead: 
+        one: Usuário
+        other: Usuários
+    attributes:
+      custom_lead:
+        first_name: Primeiro nome
+        last_name: Segundo nome
+        email: Email

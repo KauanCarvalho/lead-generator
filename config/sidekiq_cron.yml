@@ -1,0 +1,6 @@
+# Configuration file for cron jobs/workers.
+
+lead_generator_by_twitter:
+  cron: "1 * * * *" # execute at 1 minute of every hour, ex: 12:01, 13:01, 14:01, ...
+  class: Lead::Generator::Performer::TwitterWorker
+  description: Lead generator based on twitter messages
